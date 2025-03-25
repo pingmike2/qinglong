@@ -60,6 +60,8 @@ npm i @whyour/qinglong
 
 [查看文档](https://qinglong.online/guide/getting-started/installation-guide)
 
+部署在northflank设置环境变量QlPort=80，开公网80端口HTTP协议
+
 ## 内置 API
 
 [查看文档](https://qinglong.online/guide/user-guide/built-in-api)
