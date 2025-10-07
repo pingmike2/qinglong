@@ -1,7 +1,10 @@
-version: 2.18.1
-changeLogLink: https://t.me/jiao_long/426
-publishTime: 2025-01-15 08:00
+version: 2.19.2
+changeLogLink: https://t.me/jiao_long/431
+publishTime: 2025-06-27 23:59
 changeLog: |
-  1. 内置 QLAPI 增加环境变量和系统通知 api
-  2. 移除 nedb 和 sentry，不再支持 2.10.x 版本自动迁移
-  3. 修复多语言翻译
+  1. 备份数据支持选择模块，支持清除依赖缓存
+  2. QLAPI 和 openapi 的 systemNotify 支持自定义通知类型和参数
+  3. ntfy 增加可选的认证与用户动作，感谢 https://github.com/liheji
+  4. 修复取消安装依赖
+  5. 修复环境变量过大解析报错
+  6. 修改服务启动方式

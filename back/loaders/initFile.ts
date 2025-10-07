@@ -27,8 +27,8 @@ const sampleNotifyJsFile = path.join(samplePath, 'notify.js');
 const sampleNotifyPyFile = path.join(samplePath, 'notify.py');
 const scriptNotifyJsFile = path.join(scriptPath, 'sendNotify.js');
 const scriptNotifyPyFile = path.join(scriptPath, 'notify.py');
-const jsNotifyFile = path.join(preloadPath, 'notify.js');
-const pyNotifyFile = path.join(preloadPath, 'notify.py');
+const jsNotifyFile = path.join(preloadPath, '__ql_notify__.js');
+const pyNotifyFile = path.join(preloadPath, '__ql_notify__.py');
 const TaskBeforeFile = path.join(configPath, 'task_before.sh');
 const TaskBeforeJsFile = path.join(configPath, 'task_before.js');
 const TaskBeforePyFile = path.join(configPath, 'task_before.py');
@@ -116,11 +116,12 @@ export default async () => {
           `Neither content nor source specified for ${item.target}`,
         );
       }
-      const content = item.content || (await fs.readFile(item.source!));
+      const content =
+        item.content ||
+        (await fs.readFile(item.source!, { encoding: 'utf-8' }));
       await writeFileWithLock(item.target, content);
     }
   }
 
   Logger.info('✌️ Init file down');
-  console.log('✌️ Init file down');
 };
